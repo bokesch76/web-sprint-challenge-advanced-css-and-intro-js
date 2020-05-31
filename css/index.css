@@ -227,32 +227,80 @@ nav .home {
   height: 40px;
   font-size: 2rem;
 }
+@media (max-width: 500px) {
+  .title-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .title-container img {
+    max-width: 100%;
+  }
+  .title-container h1 {
+    font-size: 3rem;
+  }
+  .title-container button {
+    width: 100px;
+    height: 25px;
+    font-size: 1.5rem;
+    margin-top: 29px;
+  }
+}
 .artists-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 800px;
-}
-.artists-container .vincent {
-  display: flex;
-  width: 45%;
+  justify-content: space-around;
+  width: 80%;
   margin: 0 auto;
-  margin-bottom: 20px;
 }
-.artists-container a {
+.artists-container .artist {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px;
+}
+.artists-container .artist image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.artists-container .artist a {
   text-decoration: none;
   color: black;
   font-size: 1.75rem;
   padding: 12px;
-  display: flex;
-  justify-content: center;
   font-size: 2.5rem;
   text-align: center;
-  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.artists-container .bioVin {
-  margin: 0 auto;
-  max-width: 65%;
-  text-align: center;
+.artists-container .artist .bio {
+  display: flex;
+  align-items: center;
   font-size: 1.75rem;
+  width: 98%;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .artists-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .artists-container .artist {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+  .artists-container .artist a {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .artists-container .artist .bio {
+    font-size: 1.25rem;
+  }
 }
