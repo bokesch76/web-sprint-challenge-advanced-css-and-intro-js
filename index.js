@@ -204,39 +204,52 @@ const artists = [
 // 🖌🖼 M V P 🖼🖌 //
 
 /* Task 1: Practice accessing data above by console.log-ing following items:
-
+**DONE**
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 
-
-/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+/* **DONE** 
+Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists.splice(9, 1, "Vincent Van Gogh").name;
+console.log(artists[9]);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
  * getArtistByIndex returns a string in the format `The artist at index {id} is {name}.`
- * 
+ * **DONE**
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(id, name) {
-    /* code here */
-  }
-  
+    const artistName = artists[id];
+    console.log(`The artist at ${artistName.id} is ${artistName.name}`)
+}
+
+getArtistByIndex(7, artists)
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
+function get20s(artists){
 
-  /* Code here */
+  let modernArtists = [];
+  for (let i = 0; i <artists.length; i++) {
+    console.log(artists[i].years.slice(0,5));
+    
+    if (Number(artists[i].years.slice(0,5)<= 2000) && Number(artists[i].years.slice(0,5)>= 1900)){
+      modernArtists.push(artists);
+     console.log(modernArtists);
+    }
+  }
+  }
 
-}
 
+get20s(artists)
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -245,20 +258,21 @@ function get20s(/* Code here */){
  * 
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19. 
- * 
+ * **DONE**
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(name, index) {
+    name.splice(index);
+    console.log(name.length);
   }
-  
+  /*removeArtist(artists, 19)*/
   /**
 
 
 
 
 /* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
-
+**DONE**
 For example, you could add the following information: 
 id: 21
 name: Your Name Here, 
@@ -269,27 +283,41 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function addArtist(artists){
+ let newArtist = [{id: 20,
+  name: "Jason Bokesch",
+  years: "1974 - Present",
+  genre: "Web Design",
+  nationality: "American",
+  bio: "Jason was born on December 11, 1974 in Youngstown, Ohio. After graduating from high school, he attended Mount Union College in Alliance, Ohio where he played football and graduated with a BA in Business. After working for some time he obtained both his Masters in Information Systems and his MBA.",
+  Email: "jbokesch7628@gmail.com",
+  projects: 4}];
+  let allArtists =  artists.concat(newArtist) ;
+  
+  return allArtists;
   }
+  addArtist(artists)
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
 
 and returns an array with names of artists who painted more than 100 paintings.
-
+**DONE**
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(name, minNumber){
 
-  /* Code here */
+  let Art = {};
+  for (i = 0; i < name.length; i++) {
+    if (name[i].paintings > minNumber) {
+      console.log(name[i].name);
+    }
+  }
 
 }
 
-
+lotsOfArt(artists, 100)
 
 // 🎨🎨 STRETCH 🎨🎨//
 
